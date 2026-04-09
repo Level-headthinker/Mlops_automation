@@ -1,0 +1,192 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0f1117;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app { display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1a1d27;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid #2a2d3e;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  color: #7c6af7;
+  font-size: 18px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2a2d3e;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.sidebar button:hover, .sidebar button.active {
+  background: #7c6af720;
+  color: #7c6af7;
+}
+
+/* Main content */
+.main {
+  margin-left: 220px;
+  padding: 32px;
+  flex: 1;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+/* Cards */
+.cards { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+
+.card {
+  background: #1a1d27;
+  border: 1px solid #2a2d3e;
+  border-radius: 12px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.card label { font-size: 12px; color: #6b7280; text-transform: uppercase; }
+.card h3 { font-size: 28px; font-weight: 700; color: #7c6af7; margin-top: 4px; }
+.card p { font-size: 13px; color: #9ca3af; margin-top: 4px; }
+
+/* Chart box */
+.chart-box {
+  background: #1a1d27;
+  border: 1px solid #2a2d3e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.chart-box h4 { margin-bottom: 16px; color: #fff; font-size: 15px; }
+
+/* Predict box */
+.predict-box {
+  background: #1a1d27;
+  border: 1px solid #2a2d3e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.predict-box h4 { margin-bottom: 16px; color: #fff; }
+
+.predict-box textarea {
+  width: 100%;
+  background: #0f1117;
+  border: 1px solid #2a2d3e;
+  border-radius: 8px;
+  color: #e0e0e0;
+  padding: 12px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.predict-box button {
+  margin-top: 12px;
+  background: #7c6af7;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.predict-box button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.result {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.result.positive { background: #14532d30; color: #4ade80; border: 1px solid #4ade8040; }
+.result.negative { background: #7f1d1d30; color: #f87171; border: 1px solid #f8717140; }
+
+/* Table */
+.table-box {
+  background: #1a1d27;
+  border: 1px solid #2a2d3e;
+  border-radius: 12px;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.table-box h4 { margin-bottom: 16px; color: #fff; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { color: #6b7280; text-align: left; padding: 8px 12px; border-bottom: 1px solid #2a2d3e; }
+td { padding: 10px 12px; border-bottom: 1px solid #1f2235; color: #d1d5db; }
+tr:hover td { background: #ffffff05; }
+
+/* Status badge */
+.badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge.positive { background: #14532d30; color: #4ade80; }
+.badge.negative { background: #7f1d1d30; color: #f87171; }
+.badge.safe { background: #14532d30; color: #4ade80; }
+.badge.drift { background: #7f1d1d30; color: #f87171; }
+
+/* Status indicator */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1d27;
+  border: 1px solid #2a2d3e;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot.green { background: #4ade80; box-shadow: 0 0 6px #4ade80; }
+.dot.red { background: #f87171; box-shadow: 0 0 6px #f87171; }
+
+.retrain-btn {
+  margin-left: auto;
+  background: #7c6af720;
+  color: #7c6af7;
+  border: 1px solid #7c6af740;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
