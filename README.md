@@ -18,6 +18,7 @@ A production-grade MLOps system that automatically detects Parkinson's disease f
 ---
 
 ## 🏗️ System Architecture
+```
 Patient Voice Data
 ↓
 React Dashboard (Frontend)
@@ -33,7 +34,7 @@ MLflow (Experiment Tracking)
 n8n (Auto-Retraining Automation)
 ↑_________________________↑
 Self-Healing Loop
-
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -51,34 +52,37 @@ Self-Healing Loop
 ---
 
 ## 📁 Project Structure
+```
 mlops-fyp/
 ├── data/
-│   └── parkinsons.csv          # UCI Parkinson's Dataset
+│   └── parkinsons.csv           # UCI Parkinson's Dataset
+│
 ├── models/
-│   ├── model.pkl               # Trained Random Forest
-│   ├── scaler.pkl              # StandardScaler
-│   └── features.pkl            # Feature names
+│   ├── model.pkl                # Trained Random Forest
+│   ├── scaler.pkl               # StandardScaler
+│   └── features.pkl             # Feature names
+│
 ├── src/
-│   ├── db.py                   # Database connections
+│   ├── db.py                    # Database connections
 │   ├── preprocessing/
-│   │   └── preprocess.py       # Data cleaning & scaling
+│   │   └── preprocess.py        # Data cleaning & scaling
 │   ├── training/
-│   │   └── train.py            # Model training & MLflow logging
+│   │   └── train.py             # Model training & MLflow logging
 │   └── api/
-│       └── main.py             # FastAPI endpoints
+│       └── main.py              # FastAPI endpoints
+│
 ├── frontend/
 │   └── src/
-│       ├── App.js              # Sidebar navigation
-│       ├── api.js              # API helper functions
-│       ├── index.css           # Dark theme styling
+│       ├── App.js               # Sidebar navigation
+│       ├── api.js               # API helper functions
+│       ├── index.css            # Dark theme styling
 │       └── pages/
-│           ├── Dashboard.jsx   # Metrics & accuracy charts
-│           ├── Predict.jsx     # Patient prediction form
-│           └── Logs.jsx        # Prediction history
-├── download_data.py            # Dataset downloader
-└── README.md
-
----
+│           ├── Dashboard.jsx    # Metrics & accuracy charts
+│           ├── Predict.jsx      # Patient prediction form
+│           └── Logs.jsx         # Prediction history
+│
+├── download_data.py             # Dataset downloader
+```
 
 ## 🚀 Getting Started
 
